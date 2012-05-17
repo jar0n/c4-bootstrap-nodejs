@@ -43,9 +43,19 @@ On the server CLI:
 
 There should be considerable output on screen. Once the script has finished, the system should be fully up and running.
 
+### nodeJS specific notes
+
 #### Working directories + upstart scripts
 
 nodeJS apps are designed to run from **/home/node** so the repack script can back them up easily. In **/etc/init** there is a skeleton upstart script provided called **node-skeleton.conf** .This allows you to easily start and stop your application.
+
+#### nodeJS version
+
+Because Ubuntu 12.04 has an outdated branch of nodeJS we use a custom repository (PPA) maintained by [@ric_harvey](https://twitter.com/#!/ric_harvey) that can be found at [launchpad.net](https://launchpad.net/~richarvey/+archive/nodejs) which is currently tracking the 0.6.x branch.
+
+#### NPM modules
+
+If you need extra node packages installed on the server just at the names in a line separated file called **npm_deps** that can be located in **scripts/post.d/**
  
 ## How To: Repack (repack.sh)
 
