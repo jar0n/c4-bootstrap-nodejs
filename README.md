@@ -43,6 +43,10 @@ On the server CLI:
 
 There should be considerable output on screen. Once the script has finished, the system should be fully up and running.
 
+#### Working directories + upstart scripts
+
+nodeJS apps are designed to run from **/home/node** so the repack script can back them up easily. In **/etc/init** there is a skeleton upstart script provided called **node-skeleton.conf** .This allows you to easily start and stop your application.
+ 
 ## How To: Repack (repack.sh)
 
 While developing your site the contents of the site may change frequently. repack.sh is designed to help track these changes in github. This will allow a rebuild of the server to a given point in time. It is good practice to use repack.sh regularly to avoid loss of work, especially if you frequently add content to your site.
