@@ -13,7 +13,7 @@ then
     cd /home/node
     for i in "${install[@]}"
 	do
-	    sudu -u node npm install ${i}
+	    sudo -u node npm install ${i}
 	done 
 else
     echo "WARNING NOTHING CONFIGURED INSTALL!!!"
