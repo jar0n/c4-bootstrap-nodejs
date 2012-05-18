@@ -47,7 +47,7 @@ There should be considerable output on screen. Once the script has finished, the
 
 #### Working directories + upstart scripts
 
-nodeJS apps are designed to run from **/home/node** so the repack script can back them up easily. In **/etc/init** there is a skeleton upstart script provided called **node-skeleton.conf** .This allows you to easily start and stop your application.
+nodeJS apps are designed to run from **/home/node** as the user ***node***. Keeping all files in this directory means the repack script can back them up easily. In **/etc/init** there is a skeleton upstart script provided called **node-skeleton.conf** .This allows you to easily start and stop your application.
 
 #### nodeJS version
 
