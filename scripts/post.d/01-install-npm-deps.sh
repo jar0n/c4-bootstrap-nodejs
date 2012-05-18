@@ -2,7 +2,7 @@
 
 # Firstly set up the node user
 
-useradd --home-dir /home/node -s /bin/bash
+useradd --home-dir /home/node -s /bin/bash node
 chown -Rf node.node /home/node
 
 # now install npm modules
@@ -10,9 +10,10 @@ chown -Rf node.node /home/node
 if [[ -f scripts/post.d/npm_deps ]]
 then
     install=(`cat scripts/post.d/npm_deps`)
+    cd /home/node
     for i in "${install[@]}"
 	do
-	    su node -c "npm install express"
+	    sudu -u node npm install ${i}
 	done 
 else
     echo "WARNING NOTHING CONFIGURED INSTALL!!!"
